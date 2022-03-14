@@ -7,15 +7,8 @@ let package = Package(
     platforms: [
         .macOS(.v12)
     ],
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "LibraryRequiringCodegenLib",
-            targets: ["LibraryRequiringCodegen"]
-        )
-    ],
     dependencies: [
-        .package(name: "SwiftGen", path: "Vendor/SwiftGen"),
+        .package(path: "Vendor/SwiftGen"),
     ],
     targets: [
         .target(

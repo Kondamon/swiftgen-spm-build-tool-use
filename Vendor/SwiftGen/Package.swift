@@ -22,19 +22,19 @@ let package = Package(
     .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7")
   ],
   targets: [
+    .executableTarget(
+        name: "SwiftGenEx",
+        dependencies: [
+            "SwiftGenCLI"
+        ]
+    ),
     .plugin(
       name: "SwiftGenPlugin",
       capability: .buildTool(),
       dependencies: [
         "SwiftGenEx",
-      ],
-      path: "Plugins/SwiftGenPlugin"
+      ]
     ),
-    .executableTarget(name: "SwiftGenEx",
-                      dependencies: [
-      "SwiftGenCLI"
-    ],
-                      path: "Sources/SwiftGen"),
     .target(name: "SwiftGenCLI", dependencies: [
       "Commander",
       "Kanna",

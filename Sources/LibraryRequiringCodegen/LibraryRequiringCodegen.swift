@@ -2,6 +2,6 @@ public struct LibraryRequiringCodegen {
     public private(set) var text = "Hello, World!"
 
     public init() {
-        print("hi")
+        print(Asset.icon256x256)
     }
 }

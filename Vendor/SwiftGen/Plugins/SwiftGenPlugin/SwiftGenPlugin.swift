@@ -13,7 +13,7 @@ import PackagePlugin
          // build context. This example sets some environment variables that `swiftgen.yml`
          // bases its output paths on.
          return [.prebuildCommand(
-             displayName: "Running SwiftGen⚠️\(context.pluginWorkDirectory)",
+             displayName: "Running SwiftGen⚠️",
              executable: try context.tool(named: "SwiftGenEx").path,
              arguments: [
                  "config", "run",
