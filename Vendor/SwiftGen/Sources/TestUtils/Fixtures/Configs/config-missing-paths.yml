@@ -1,4 +1,0 @@
-strings:
-  outputs:
-    templateName: template
-    output: out.swift

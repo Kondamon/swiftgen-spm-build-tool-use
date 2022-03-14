@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v12)
     ],
     dependencies: [
-        .package(path: "Vendor/SwiftGen"),
+        .package(path: "Vendor/SwiftGenPlugin"),
     ],
     targets: [
         .target(
@@ -21,7 +21,7 @@ let package = Package(
                 .copy("Media.xcassets")
             ],
             plugins: [
-                .plugin(name: "SwiftGenPlugin", package: "SwiftGen")
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
         )
     ]

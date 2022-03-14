@@ -4,4 +4,3 @@ xcassets:
   outputs:
     - templateName: swift5
       output: ${DERIVED_SOURCES_DIR}/Assets.swift
-
