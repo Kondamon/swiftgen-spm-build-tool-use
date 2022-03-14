@@ -3,4 +3,5 @@ xcassets:
     - Sources/LibraryRequiringCodegen/Media.xcassets
   outputs:
     - templateName: swift5
-      output: Generated/Assets.swift
+      output: Sources/Generated/Assets.swift
+
