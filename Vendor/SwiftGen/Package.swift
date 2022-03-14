@@ -8,7 +8,7 @@ let package = Package(
   ],
   products: [
     .plugin(name: "SwiftGenPlugin", targets: ["SwiftGenPlugin"]),
-    .executable(name: "swiftgen", targets: ["swiftgen"]),
+    .executable(name: "SwiftGenEx", targets: ["SwiftGenEx"]),
     .library(name: "SwiftGenCLI", targets: ["SwiftGenCLI"]),
     .library(name: "SwiftGenKit", targets: ["SwiftGenKit"]),
   ],
@@ -26,13 +26,15 @@ let package = Package(
       name: "SwiftGenPlugin",
       capability: .buildTool(),
       dependencies: [
-        "swiftgen",
+        "SwiftGenEx",
       ],
       path: "Plugins/SwiftGenPlugin"
     ),
-    .executableTarget(name: "swiftgen", dependencies: [
+    .executableTarget(name: "SwiftGenEx",
+                      dependencies: [
       "SwiftGenCLI"
-    ]),
+    ],
+                      path: "Sources/SwiftGen"),
     .target(name: "SwiftGenCLI", dependencies: [
       "Commander",
       "Kanna",
