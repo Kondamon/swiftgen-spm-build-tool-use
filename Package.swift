@@ -24,10 +24,10 @@ let package = Package(
                 .product(name: "swiftgen", package: "SwiftGen")
             ],
             resources: [
-                .process("AppIcon.appiconset/icon_256x256.png"),
-                .process("AppIcon.appiconset/icon_256x256@2x.png"),
-                .process("AppIcon.appiconset/icon_512x512.png"),
-                .process("AppIcon.appiconset/icon_512x512@2x.png")
+                .copy("Media.xcassets/icon_256x256.imageset/icon_256x256.png"),
+                .copy("Media.xcassets/icon_256x256.imageset/icon_256x256@2x.png"),
+                .copy("Media.xcassets/icon_512x512.imageset/icon_512x512.png"),
+                .copy("Media.xcassets/icon_512x512.imageset/icon_512x512@2x.png")
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGen")
