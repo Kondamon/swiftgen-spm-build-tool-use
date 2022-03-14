@@ -9,9 +9,6 @@ import PackagePlugin
          // This example configures `swiftgen` to take inputs from a `swiftgen.yml` file
          let swiftGenConfigFile = context.package.directory.appending("swiftgen.yml")
 
-         // This example configures the command to write to a "GeneratedSources" directory.
-         let genSourcesDir = context.pluginWorkDirectory
-
         print("😬", context)
          // Return a command to run `swiftgen` as a prebuild command. It will be run before
          // every build and generates source files into an output directory provided by the
@@ -27,8 +24,8 @@ import PackagePlugin
              environment: [
                  "PROJECT_DIR": "\(context.package.directory)",
                  "TARGET_NAME": "\(target.name)",
-                 "DERIVED_SOURCES_DIR": "\(genSourcesDir)",
+                 "DERIVED_SOURCES_DIR": "\(context.package.directory)",
              ],
-             outputFilesDirectory: genSourcesDir)]
+             outputFilesDirectory: context.package.directory)]
     }
 }
