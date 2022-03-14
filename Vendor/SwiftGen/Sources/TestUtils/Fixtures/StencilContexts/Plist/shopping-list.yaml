@@ -1,0 +1,21 @@
+files:
+- document:
+    data:
+    - "Eggs"
+    - "Bread"
+    - "Milk"
+    metadata:
+      element:
+        type: "String"
+      type: "Array"
+  documents:
+  - data:
+    - "Eggs"
+    - "Bread"
+    - "Milk"
+    metadata:
+      element:
+        type: "String"
+      type: "Array"
+  name: "shopping-list"
+  path: "shopping-list.plist"

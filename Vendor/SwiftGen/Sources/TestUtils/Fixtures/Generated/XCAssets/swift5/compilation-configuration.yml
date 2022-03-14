@@ -1,0 +1,8 @@
+--- !ruby/object:CompilationConfiguration
+common:
+  swift_versions:
+    - 5
+file_specific:
+  all-customBundle.swift:
+    files:
+      - Common-CustomBundle.swift

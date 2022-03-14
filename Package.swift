@@ -1,27 +1,37 @@
 // swift-tools-version: 5.6
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "LibraryRequiringCodegen",
+    platforms: [
+        .macOS(.v12)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "LibraryRequiringCodegen",
-            targets: ["LibraryRequiringCodegen"]),
+            name: "LibraryRequiringCodegenLib",
+            targets: ["LibraryRequiringCodegen"]
+        )
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-        .package(path: "Dependencies/SwiftGen")
+        .package(name: "SwiftGen", path: "Vendor/SwiftGen"),
     ],
     targets: [
-        .executableTarget(
+        .target(
             name: "LibraryRequiringCodegen",
+            dependencies: [
+                .product(name: "swiftgen", package: "SwiftGen")
+            ],
+            resources: [
+                .process("AppIcon.appiconset/icon_256x256.png"),
+                .process("AppIcon.appiconset/icon_256x256@2x.png"),
+                .process("AppIcon.appiconset/icon_512x512.png"),
+                .process("AppIcon.appiconset/icon_512x512@2x.png")
+            ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGen")
             ]
-        ),
+        )
     ]
 )
