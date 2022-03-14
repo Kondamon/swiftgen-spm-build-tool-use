@@ -1,0 +1,3 @@
+[submodule "Dependencies/SwiftGen"]
+	path = Dependencies/SwiftGen
+	url = git@github.com:adam-zethraeus/SwiftGen.git
